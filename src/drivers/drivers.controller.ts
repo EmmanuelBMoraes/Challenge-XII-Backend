@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 import { DriversService } from './drivers.service';
 import { Response } from 'express';
-import { DriversDto } from './dto/drivers.dto/drivers.dto';
+import { DriversDtoDomain } from './dto/drivers.dto.domain';
 
 @Controller('drivers')
 export class DriversController {
@@ -19,8 +19,16 @@ export class DriversController {
   }
 
   @Post()
-  async createDriver(@Res() res: Response, @Body() driverDTO: DriversDto) {
-    const newDriver = await this.driversService.createNewDriver(driverDTO);
-    return res.status(201).json(newDriver);
+  async createDriver(@Res() res: Response, @Body() driver: DriversDtoDomain) {
+    try {
+      const newDriver = await this.driversService.createNewDriver(driver);
+      return res.status(201).json(newDriver);
+    } catch (error) {
+      return res
+        .status(500)
+        .json({
+          message: 'Error on creating Driver, please verify and try again',
+        });
+    }
   }
 }

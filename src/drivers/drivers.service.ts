@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Drivers } from 'src/entities/driver.entity';
 import { Repository } from 'typeorm';
-import { DriversDto } from './dto/drivers.dto/drivers.dto';
+import { DriversDtoDomain } from './dto/drivers.dto.domain';
 
 @Injectable()
 export class DriversService {
@@ -16,8 +16,12 @@ export class DriversService {
     return drivers;
   }
 
-  async createNewDriver(driver: DriversDto): Promise<DriversDto> {
-    const newDriver = await this.driversRepository.save(driver);
-    return newDriver;
+  async createNewDriver(driver: DriversDtoDomain): Promise<DriversDtoDomain> {
+    try {
+      const newDriver = await this.driversRepository.save(driver);
+      return newDriver;
+    } catch (error) {
+      return Promise.reject();
+    }
   }
 }
