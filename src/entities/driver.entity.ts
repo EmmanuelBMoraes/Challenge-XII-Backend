@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity({ name: 'drivers' })
 export class Drivers {
@@ -21,7 +27,7 @@ export class Drivers {
   city: string;
 
   @Column({ name: 'referal_code', nullable: true })
-  referalCode: number;
+  referalCode: string;
 
   @Column({ name: 'own_car', nullable: false })
   ownCar: boolean;
@@ -29,9 +35,9 @@ export class Drivers {
   @Column({ name: 'car_type', nullable: false })
   carType: string;
 
-  @Column({ name: 'created_at' })
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: string;
 
-  @Column({ name: 'updated_at' })
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: string;
 }
