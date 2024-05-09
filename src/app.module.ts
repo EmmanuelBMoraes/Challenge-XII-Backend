@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { DriversModule } from './entities/drivers/drivers.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ConfigModule } from '@nestjs/config';
       logging: false,
       entities: [__dirname + '/**/*.entity{.js, .ts}'],
     }),
+    DriversModule,
   ],
   controllers: [AppController],
   providers: [AppService],
