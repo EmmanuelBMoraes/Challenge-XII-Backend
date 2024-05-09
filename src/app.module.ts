@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
-import { DriversModule } from './entities/drivers/drivers.module';
+import { DriversModule } from './drivers/drivers.module';
 
 @Module({
   imports: [
