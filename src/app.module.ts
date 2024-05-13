@@ -24,7 +24,7 @@ import { PostsModule } from './posts/posts.module';
     DriversModule,
     PostsModule,
   ],
-  controllers: [AppController, PostsController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}

@@ -17,12 +17,12 @@ export class Posts {
   @Column({ name: 'image_url', nullable: false })
   imageUrl: string;
 
-  @Column({ name: 'description', nullable: false, unique: true })
+  @Column({ name: 'description', nullable: false })
   description: string;
 
   @CreateDateColumn({ name: 'created_at' })
-  createdAt: string;
+  createdAt: Date;
 
   @UpdateDateColumn({ name: 'updated_at' })
-  updatedAt: string;
+  updatedAt: Date;
 }

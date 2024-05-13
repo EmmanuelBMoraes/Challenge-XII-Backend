@@ -21,7 +21,7 @@ export class PostsService {
       const newPost = await this.postsRepository.save(post);
       return newPost;
     } catch (error) {
-      return Promise.reject();
+      return error;
     }
   }
 }
