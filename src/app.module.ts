@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { DriversModule } from './drivers/drivers.module';
-import { PostsController } from './posts/posts.controller';
 import { PostsModule } from './posts/posts.module';
 
 @Module({
