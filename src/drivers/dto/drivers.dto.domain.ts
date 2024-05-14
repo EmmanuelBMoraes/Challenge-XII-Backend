@@ -9,27 +9,27 @@ import {
 export class DriversDtoDomain {
   readonly id?: string;
 
-  @IsString({ message: 'First name must be a string' })
-  @IsNotEmpty({ message: 'First name must not be empty' })
+  @IsString({ message: 'firstName must be a string' })
+  @IsNotEmpty({ message: 'firstName must not be empty' })
   @IsAlpha()
   readonly firstName: string;
 
-  @IsString({ message: 'Last name must be a string' })
-  @IsNotEmpty({ message: 'Last name must not be empty' })
+  @IsString({ message: 'lastName must be a string' })
+  @IsNotEmpty({ message: 'lastName must not be empty' })
   @IsAlpha()
   readonly lastName: string;
 
-  @IsString({ message: 'Email should be a string' })
-  @IsNotEmpty({ message: 'Email must not be empty' })
+  @IsString({ message: 'email should be a string' })
+  @IsNotEmpty({ message: 'email must not be empty' })
   @IsEmail({}, { message: 'Invalid email format' })
   readonly email: string;
 
-  @IsString({ message: 'Country should be a string' })
-  @IsNotEmpty({ message: 'Country must not be empty' })
+  @IsString({ message: 'country should be a string' })
+  @IsNotEmpty({ message: 'country must not be empty' })
   readonly country: string;
 
-  @IsString({ message: 'City should be a string' })
-  @IsNotEmpty({ message: 'City must not be empty' })
+  @IsString({ message: 'city should be a string' })
+  @IsNotEmpty({ message: 'city must not be empty' })
   readonly city: string;
 
   //yet to finish
