@@ -24,11 +24,10 @@ export class DriversController {
       const newDriver = await this.driversService.createNewDriver(driver);
       return res.status(201).json(newDriver);
     } catch (error) {
-      return res
-        .status(500)
-        .json({
-          message: 'Error on creating Driver, please verify and try again',
-        });
+      return res.status(500).json({
+        message: error.message,
+        code: error.code,
+      });
     }
   }
 }
