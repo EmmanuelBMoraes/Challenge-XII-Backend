@@ -12,7 +12,10 @@ export class PostsService {
   ) {}
 
   async getAllPosts(): Promise<Posts[]> {
-    const posts = await this.postsRepository.find();
+    const posts = await this.postsRepository
+      .createQueryBuilder('posts')
+      .orderBy('created_at', 'DESC')
+      .getMany();
     return posts;
   }
 

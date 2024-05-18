@@ -10,13 +10,13 @@ import { PostsModule } from './posts/posts.module';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mysql',
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       database: process.env.DB_DATABASE,
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      synchronize: true,
+      synchronize: false,
       logging: false,
       entities: [__dirname + '/**/*.entity{.js, .ts}'],
     }),
