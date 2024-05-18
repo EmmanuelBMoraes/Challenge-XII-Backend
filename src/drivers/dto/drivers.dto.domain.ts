@@ -4,6 +4,8 @@ import {
   IsString,
   IsEmail,
   IsBoolean,
+  IsAlphanumeric,
+  IsOptional,
 } from 'class-validator';
 
 export class DriversDtoDomain {
@@ -33,6 +35,8 @@ export class DriversDtoDomain {
   readonly city: string;
 
   //yet to finish
+  @IsOptional()
+  @IsAlphanumeric('en-US', { message: 'invalid referalCode' })
   readonly referalCode?: string;
 
   @IsBoolean({ message: 'ownCar must be a boolean' })
