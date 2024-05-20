@@ -16,6 +16,6 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=${DB_DATABASE}
     ports:
-      - 3001:3000
+      - 3000:3000
     volumes:
       - ./src:/app/src
