@@ -21,6 +21,8 @@ This is the back-end part of the project "Challenge XII" from Compass UOL Intern
 
 ## First Step - Creating your .env file
 
+Remember to change the port 80 to another on the docker-compose.yml in order to run the project locally, I sugest the port 3000
+
 <div style="padding-left: 1em;"><img src="https://img.shields.io/badge/Env-blue?logo=.env&logoColor=black&color=%23ECD53F"/></div>
 
 ```bash
